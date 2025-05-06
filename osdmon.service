@@ -1,0 +1,12 @@
+# /etc/systemd/system/osdmon.service
+[Unit]
+Description=A Ceph OSD Monitor/Controller/Prometheus Exporter
+Documentation=None
+After=network-online.target
+[Service]
+User=root
+Restart=on-failure
+ExecStart=/usr/local/bin/osdmon.py
+[Install]
+WantedBy=multi-user.target
+
